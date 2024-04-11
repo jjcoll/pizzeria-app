@@ -47,3 +47,41 @@
 .submit-order {
     margin-bottom: 72px;
 }
+
+
+/* Alert */
+
+.alert__container {
+    position: fixed;
+    width: 100%;
+}
+
+.alert__container div {
+    margin-bottom: 12px;
+}
+
+.alert-success {
+    padding: 20px 40px;
+    background-color: #37b24d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* position: fixed; */
+    /* width: 100%; */
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: black;
+}

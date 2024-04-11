@@ -1,6 +1,6 @@
 export const menu = [
     {
-        "name": "Margherita Pizza",
+        "name": "Pizza Margherita",
         "imageName": "margherita",
         "price": 10,
         "vegan": false,

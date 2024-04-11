@@ -3,7 +3,12 @@ import { menu } from "./data.js";
 console.log(menu)
 
 const menuContainer = document.querySelector('.menu-container');
+
+
 let order = JSON.parse(localStorage.getItem('order'));
+if (!order) {
+    order = []
+}
 
 const cartItemsElement = document.querySelector('.cart-items')
 let cartItems = order.length
@@ -21,6 +26,28 @@ deleteOrderBtn.addEventListener('click', () => {
     cartItemsElement.innerText = 0
     cartItems = 0
 })
+
+
+const alertContainer = document.querySelector('.alert__container')
+function throwAlert(message) {
+    const alert = document.createElement('div')
+    alert.classList.add('alert-success')
+    alert.innerHTML = `
+            <p><strong>Product Added!</strong> ${message}</p>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';"><i
+                    class="fa-solid fa-xmark"></i></span>
+        `
+    alertContainer.appendChild(alert)
+
+    setTimeout(() => {
+        console.log('removing thing')
+        const firstChild = alertContainer.querySelector('div');
+        if (firstChild) {
+            alertContainer.removeChild(firstChild);
+        }
+    }, 2000)
+}
+
 
 menu.map(item => {
 
@@ -47,6 +74,11 @@ menu.map(item => {
 
     const button = element.querySelector('.add-to-order')
     button.addEventListener('click', () => {
+
+
+        // alert the user
+        throwAlert(item.name)
+
 
         // check if item already in order
         const exists = order.findIndex(i => i.name === item.name)
