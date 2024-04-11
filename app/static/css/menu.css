@@ -1,0 +1,49 @@
+.menu__container {
+    width: 1200px;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.order-item {
+    border: solid 1px #e9ecef;
+    border-radius: 24px;
+    padding: 24px 48px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-item:hover {
+    background-color: #e9ecef;
+}
+
+.pizza-name {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pizza-desc {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.pizza-price-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pizza__img {
+    height: 150px;
+}
+
+.submit-order {
+    margin-bottom: 72px;
+}

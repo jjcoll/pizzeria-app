@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/order.css') }}">
+
+
+<section class="container order__container">
+
+    <h1 class="heading-1">Review your order</h1>
+    <div class="order-container">
+
+        <!-- <div class="order-item">
+            <div class="order-img-amount">
+                <div>
+                    <p class="order__amount">1x</p>
+                </div>
+                <div class="img__container">
+                    <img class="order__img" src="static/img/pizzas/pepperoni.png" alt="">
+                </div>
+            </div>
+
+            <div>
+                <p>Pizza</p>
+                <p>Amount: <button>-</button>3<button>+</button></p>
+                <p>Price: </p>
+
+            </div>
+        </div> -->
+
+    </div>
+    <button class="btn submit-order">Complete Order</button>
+</section>
+
+
+{% endblock %}

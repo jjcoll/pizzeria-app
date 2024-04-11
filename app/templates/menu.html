@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+
+
+<section class="container menu__container">
+    <h1 class="heading-1">Our Menu</h1>
+
+    <div class="menu-container">
+
+    </div>
+    <br>
+
+    <button class="btn submit-order mr-12">View Order</button>
+    <button class="btn btn-remove">Delete Order</button>
+</section>
+
+{% endblock %}

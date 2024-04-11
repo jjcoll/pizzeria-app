@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+<section class="container hero__container">
+    <div>
+        <h1 class="heading-1">Authentic Italian Pizza in the Heart of Eindhoven</h1>
+        <h2 class="heading-2">Where Tradition Meets Taste</h2>
+        <button class="btn"><a href="/menu">View our Menu</a></button>
+    </div>
+    <div class="hero-img__container">
+        <img class="hero-img" src="/static/img/img.jpg" alt="">
+    </div>
+
+</section>
+
+<section class="container wdwu__container">
+    <h2 class="heading-2">Why Dine with Us?</h2>
+    <div class="wdwu__list">
+        <div class="wdwu__item">
+            <p>Authentic Italian Recipes</p>
+            <i class="fa-solid fa-file-lines"></i>
+        </div>
+        <div class="wdwu__item">
+            <p>Fresh, Locally-Sourced Ingredients</p>
+            <i class="fa-solid fa-carrot"></i>
+        </div>
+        <div class="wdwu__item">
+            <p>Family-Friendly Atmosphere</p>
+            <i class="fa-solid fa-people-roof"></i>
+        </div>
+        <div class="wdwu__item">
+            <p>Fast and Reliable Service</p>
+            <i class="fa-solid fa-truck-fast"></i>
+        </div>
+    </div>
+
+</section>
+
+<section class="container">
+    <h2 class="heading-2">Testimonials</h2>
+    <div class="testimonial">
+        <p class="testimonial-name">
+            Samantha R.
+        </p>
+        <p class="testimonial-review">
+            "Every bite of the Margherita pizza took me straight back to Italy. It's rare to find such
+            authentic flavors outside of Napoli. Mario and Luigi's Pizzeria is a gem in our city. Can't wait to come
+            back!"
+        </p>
+        <div class="star__container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <p class="testimonial-name">
+            Michael J.
+        </p>
+        <p class="testimonial-review">
+            "Incredible service and even better pizza! The Diavola was perfectly spicy, and the crust was just the right
+            kind of crispy. The family-friendly atmosphere made our dinner even more enjoyable.",
+
+        </p>
+        <div class="star__container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
+    </div>
+</section>
+
+<section class="cta__container">
+    <div class="container cta__inner-container">
+        <div>
+            <img class="cta__img" src="/static/img/img.jpg" alt="">
+        </div>
+        <div>
+            <h2 class="heading-2">Craving Pizza?</h2>
+            <p>
+                Skip the wait and come and try the best pizzas in Eindhoven now!
+            </p>
+            <button class="btn cta__btn">Visit us!</button>
+        </div>
+
+
+    </div>
+
+</section>
+
+<footer class="footer">
+    <ul class="footer__links">
+        <li><a href="">About Us</a></li>
+        <li><a href="">Menu</a></li>
+        <li><a href="">Contact Us</a></li>
+    </ul>
+    <ul class="footer__links">
+        <li><a href=""></a><i class="fa-brands fa-instagram"></i></li>
+        <li><a href=""></a><i class="fa-brands fa-facebook"></i></li>
+        <li><a href=""></a><i class="fa-brands fa-whatsapp"></i></li>
+    </ul>
+</footer>
+
+{% endblock %}

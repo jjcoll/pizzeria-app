@@ -1,0 +1,62 @@
+* {
+    font-size: 12px;
+}
+
+.kitchen__container {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 52px;
+    margin-bottom: 40px;
+}
+
+.filter_container {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.order__container {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 92px;
+}
+
+.order {
+    background-color: #f1f3f5;
+    padding: 10px;
+    border-radius: 24px;
+}
+
+.item {
+    background-color: #e9ecef;
+    padding: 5px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+}
+
+.item-completed {
+    background-color: #ebfbee;
+}
+
+.btn {
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.filter-btn__active {
+    background-color: #dee2e6;
+}
+
+.get-orders {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.no-orders {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+}

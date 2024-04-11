@@ -1,0 +1,105 @@
+/* Hero */
+
+.hero__container {
+    margin-top: 52px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img__container {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img {
+    height: 100%;
+}
+
+/* WDWU - Why dine with us */
+.wdwu__container {
+    justify-content: end;
+    width: 400px;
+}
+
+.wdwu__list {
+    list-style: none;
+}
+
+.wdwu__item {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+/* TESTIMONIALS */
+.testimonial {
+    padding: 24px 48px;
+    background-color: #dee2e6;
+    border-radius: 12px;
+    margin-bottom: 32px;
+}
+
+.testimonial-name {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.testimonial-review {
+    font-style: italic;
+}
+
+
+/* CTA */
+
+.cta__container {
+
+    margin-top: 120px;
+    width: 100%;
+    background-color: #212529;
+    padding: 48px 92px;
+}
+
+.cta__inner-container {
+    margin-top: 0px;
+    color: #dee2e6;
+    display: flex;
+    gap: 52px;
+    height: 200px;
+}
+
+.cta__img {
+    height: 100%;
+}
+
+.cta__btn {
+    margin-top: 20px;
+    background-color: #ebeef1;
+}
+
+.footer {
+    background-color: #212529;
+    color: #dee2e6;
+    padding: 48px 92px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer li a {
+    text-decoration: none;
+    color: #dee2e6;
+}
+
+.footer__links {
+    display: flex;
+    gap: 32px;
+}
+
+.footer__links li {
+    list-style: none;
+}

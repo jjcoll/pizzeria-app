@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/kitchen.css') }}">
+
+
+<section class="">
+    <div class="kitchen__container">
+        <h2 class="heading-2">Orders</h2>
+        <div class="filter_container">
+            <p>Filter Orders: </p>
+            <button class="btn filter-btn" value="all">All</button>
+            <button class="btn filter-btn filter-btn__active" value="not-done">Not-done</button>
+            <button class="btn filter-btn" value="completed">Completed</button>
+        </div>
+    </div>
+
+
+
+    <div class="order__container">
+
+        <!-- <div class="order">
+            <div class="flex">
+                <p><i class="fa-solid fa-hashtag"></i> 23</p>
+                <p><i class="fa-solid fa-clock"></i> 20:24</p>
+                <button class="btn">Completed</button>
+            </div>
+
+            <div class="item">
+                <div class="flex">
+                    <p>1 x Pizza</p>
+                    <p><i class="fa-regular fa-clock"></i> 2:00</p>
+                </div>
+                <button class="btn">Done</button>
+            </div>
+
+        </div> -->
+
+
+
+    </div>
+
+    <!-- <button class="btn get-orders">get orders</button> -->
+
+</section>
+{% endblock %}
