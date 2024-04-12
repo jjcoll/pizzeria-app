@@ -45,7 +45,7 @@ function throwAlert(message) {
         if (firstChild) {
             alertContainer.removeChild(firstChild);
         }
-    }, 2000)
+    }, 3000)
 }
 
 

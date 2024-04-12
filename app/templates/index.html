@@ -6,78 +6,145 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 
-<section class="container hero__container">
-    <div>
-        <h1 class="heading-1">Authentic Italian Pizza in the Heart of Eindhoven</h1>
-        <h2 class="heading-2">Where Tradition Meets Taste</h2>
-        <button class="btn"><a href="/menu">View our Menu</a></button>
-    </div>
-    <div class="hero-img__container">
-        <img class="hero-img" src="/static/img/img.jpg" alt="">
-    </div>
+<div class="bg-img__container">
+    <section class="container hero__container">
+        <div>
+            <h1 class="heading-1">Authentic Italian Pizza in the Heart of Eindhoven</h1>
+            <h2 class="heading-2">Where Tradition Meets Taste</h2>
+            <button class="btn menu-btn"><a href="/menu">View our Menu</a></button>
+        </div>
+        <!-- <div class="hero-img__container">
+            <img class="hero-img" src="/static/img/img.jpg" alt="">
+        </div> -->
 
-</section>
+    </section>
+</div>
 
 <section class="container wdwu__container">
-    <h2 class="heading-2">Why Dine with Us?</h2>
-    <div class="wdwu__list">
-        <div class="wdwu__item">
-            <p>Authentic Italian Recipes</p>
-            <i class="fa-solid fa-file-lines"></i>
-        </div>
-        <div class="wdwu__item">
-            <p>Fresh, Locally-Sourced Ingredients</p>
-            <i class="fa-solid fa-carrot"></i>
-        </div>
-        <div class="wdwu__item">
-            <p>Family-Friendly Atmosphere</p>
-            <i class="fa-solid fa-people-roof"></i>
-        </div>
-        <div class="wdwu__item">
-            <p>Fast and Reliable Service</p>
-            <i class="fa-solid fa-truck-fast"></i>
-        </div>
+
+    <div>
+        <img class="wdwu__img"
+            src="https://images.getbento.com/accounts/e4723b86d532f11ffad3dd97bc809ee0/media/images/15199antonio.jpg"
+            alt="">
     </div>
+
+    <div class="wdwu-text__container">
+        <h2 class="heading-2">Why Dine with Us?</h2>
+        <div class="wdwu__list">
+            <div class="wdwu__item">
+                <p>Authentic Italian Recipes</p>
+                <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <div class="wdwu__item">
+                <p>Fresh, Locally-Sourced Ingredients</p>
+                <i class="fa-solid fa-carrot"></i>
+            </div>
+            <div class="wdwu__item">
+                <p>Family-Friendly Atmosphere</p>
+                <i class="fa-solid fa-people-roof"></i>
+            </div>
+            <div class="wdwu__item">
+                <p>Fast and Reliable Service</p>
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+        </div>
+
+    </div>
+
+
 
 </section>
 
 <section class="container">
-    <h2 class="heading-2">Testimonials</h2>
-    <div class="testimonial">
-        <p class="testimonial-name">
-            Samantha R.
-        </p>
-        <p class="testimonial-review">
-            "Every bite of the Margherita pizza took me straight back to Italy. It's rare to find such
-            authentic flavors outside of Napoli. Mario and Luigi's Pizzeria is a gem in our city. Can't wait to come
-            back!"
-        </p>
-        <div class="star__container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
+    <h2 class="heading-2">Good Words</h2>
+    <div class="testimonial__container">
+        <div class="testimonial">
+            <div class="star__container">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="testimonial-review">
+                "Every bite of the Margherita pizza took me straight back to Italy. It's rare to find such
+                authentic flavors outside of Napoli. Mario and Luigi's Pizzeria is a gem in our city. Can't wait to come
+                back!"
+            </p>
+            <p class="testimonial-name">
+                Samantha R.
+            </p>
         </div>
+        <div class="testimonial">
+            <div class="star__container">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="testimonial-review">
+                "Every bite of the Margherita pizza took me straight back to Italy. It's rare to find such
+                authentic flavors outside of Napoli. Mario and Luigi's Pizzeria is a gem in our city. Can't wait to come
+                back!"
+            </p>
+            <p class="testimonial-name">
+                Samantha R.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="container flex">
+
+    <div>
+        <h2 class="heading-2">
+            Opening Hours
+        </h2>
+        <div class="flex">
+            <p>Mon</p>
+            <p>12:00 - 22:00</p>
+        </div>
+
+        <div class="flex">
+            <p>Tue</p>
+            <p>12:00 - 22:00</p>
+        </div>
+
+        <div class="flex">
+            <p>Wed</p>
+            <p class="closed-day">Closed</p>
+        </div>
+
+        <div class="flex">
+            <p>Thu</p>
+            <p>12:00 - 22:00</p>
+        </div>
+
+        <div class="flex">
+            <p>Fri</p>
+            <p>12:00 - 22:00</p>
+        </div>
+
+
+        <div class="flex">
+            <p>Sat</p>
+            <p>12:00 - 22:00</p>
+        </div>
+
+        <div class="flex">
+            <p>Sun</p>
+            <p>12:00 - 22:00</p>
+        </div>
+
     </div>
 
-    <div class="testimonial">
-        <p class="testimonial-name">
-            Michael J.
-        </p>
-        <p class="testimonial-review">
-            "Incredible service and even better pizza! The Diavola was perfectly spicy, and the crust was just the right
-            kind of crispy. The family-friendly atmosphere made our dinner even more enjoyable.",
-
-        </p>
-        <div class="star__container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-        </div>
+    <div>
+        <p>penus</p>
     </div>
+
 </section>
 
 <section class="cta__container">

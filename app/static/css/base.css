@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #fef5f5;
+}
+
 /* HELPER CLASSES */
 
 .container {
@@ -22,6 +26,7 @@
 .heading-2 {
     font-size: 28px;
     margin-bottom: 16px;
+    /* color: #5a1414; */
 }
 
 .mr-12 {
@@ -43,14 +48,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
-    background-color: #212529;
+    height: 15vh;
+    background-color: #5a1414;
     padding: 0 40px;
     font-size: 20px;
 }
 
 .logo {
     color: whitesmoke;
+}
+
+.logo__img {
+    /* margin-top: 20px; */
+    height: 150px;
 }
 
 .nav-links {
@@ -66,6 +76,7 @@
 .nav-links li a {
     color: whitesmoke;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .sticky {
@@ -77,7 +88,7 @@
 }
 
 .mg-sticky {
-    height: 100px;
+    height: 15vh;
 }
 
 .cart-items_rel {

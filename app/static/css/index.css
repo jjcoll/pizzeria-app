@@ -1,7 +1,25 @@
 /* Hero */
 
+.bg-img__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* Adjust the last value (0.5) for the desired opacity */
+    justify-content: center;
+
+    /* background-color: red; */
+    background-image: linear-gradient(rgba(34, 34, 34, 0.6),
+            rgba(34, 34, 34, 0.6)), url('https://images.getbento.com/accounts/fe4a7ce3acf7ad84a4119c806fd43fdc/media/images/63359HHKDX24YMNHFVORN2XJO66JVEY.jpg?w=1200&fit=max&auto=compress,format');
+    background-color: rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    height: 85vh;
+}
+
 .hero__container {
-    margin-top: 52px;
+    color: #dee2e6;
+    margin-top: 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -18,10 +36,33 @@
     height: 100%;
 }
 
+
+.menu-btn a {
+    color: #dee2e6;
+}
+
+.menu-btn:hover {
+    background-color: #5a1414;
+    border-color: #5a1414;
+}
+
 /* WDWU - Why dine with us */
 .wdwu__container {
     justify-content: end;
-    width: 400px;
+    /* width: 400px; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.wdwu-text__container {
+    width: 100%;
+}
+
+.wdwu__img {
+    height: 500px;
 }
 
 .wdwu__list {
@@ -37,20 +78,44 @@
 }
 
 /* TESTIMONIALS */
+
+.testimonial__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .testimonial {
     padding: 24px 48px;
-    background-color: #dee2e6;
+    /* background-color: #dee2e6; */
     border-radius: 12px;
     margin-bottom: 32px;
+    text-align: center;
+}
+
+.star__container {
+    margin-bottom: 24px;
+}
+
+.star__container i {
+    font-size: 14px;
 }
 
 .testimonial-name {
     font-size: 24px;
     margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .testimonial-review {
     font-style: italic;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Dates */
+.closed-day {
+    margin-right: 25px;
 }
 
 

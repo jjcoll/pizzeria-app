@@ -23,6 +23,15 @@
     background-color: #e9ecef;
 }
 
+.order-item:hover .pizza__img {
+    transform: scale(1.2);
+    /* Increase the size of the image */
+    transition: transform 0.3s ease;
+    /* Apply a smooth transition effect */
+}
+
+
+
 .pizza-name {
     font-size: 22px;
     text-align: center;
@@ -40,6 +49,8 @@
     justify-content: space-between;
 }
 
+
+
 .pizza__img {
     height: 150px;
 }
@@ -54,6 +65,7 @@
 .alert__container {
     position: fixed;
     width: 100%;
+    z-index: 2;
 }
 
 .alert__container div {
@@ -67,6 +79,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 2;
 
     /* position: fixed; */
     /* width: 100%; */
