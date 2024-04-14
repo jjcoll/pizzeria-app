@@ -13,6 +13,17 @@ function updateCart() {
 }
 
 
+// Loader
+const loaderEl = document.querySelector('.loader')
+function hideLoader() {
+    loaderEl.classList.add('hidden')
+}
+
+function showLoader() {
+    loaderEl.classList.remove('hidden')
+}
+
+
 const alertContainer = document.querySelector('.alert__container')
 function throwAlert(m1, m2, type) {
 

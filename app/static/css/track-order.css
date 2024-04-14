@@ -1,0 +1,35 @@
+.progress-bar__container {
+    width: 600px;
+    height: 20px;
+    border-radius: 12px;
+    background-color: #dee2e6;
+    border: 3px solid #099268;
+    margin-bottom: 12px;
+}
+
+.progress-bar {
+    width: 40%;
+    height: 100%;
+    background-color: #099268;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-bottom: 32px;
+}
+
+.status {
+    background-color: #868e96;
+    color: whitesmoke;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 999999px;
+    margin-right: 12px;
+}
+
+.status-done {
+    background-color: #099268;
+}

@@ -4,7 +4,18 @@ const paymentOptionBtn = document.querySelectorAll('.payment-option')
 
 const inputFields = document.querySelector('.input-fields')
 
+// total price next to button
+let order = JSON.parse(localStorage.getItem('order'))
+const priceElement = document.querySelector('.price')
+priceElement.innerText = `(${calculateTotal(order)} $)`
+
 let paymentOption = 'credit-card'
+
+
+// redirect user if they go to payment page with empty order
+if (order.length === 0) {
+    window.location.href = '/menu'
+}
 
 
 const currentDate = new Date();
@@ -190,7 +201,6 @@ paymentBtn.addEventListener('click', (e) => {
 async function submitOrder() {
     const url = 'http://127.0.0.1:5000/post-order'
 
-    let order = JSON.parse(localStorage.getItem('order'))
     console.log(order)
 
     const data = {
@@ -259,8 +269,16 @@ async function submitOrder() {
                 </tr> 
             ${orderSummary}
             </table>
+            <div class="flex">
             <p>Total ${calculateTotal(serverOrder)} $</p>
+            <button class="btn btn-track-order">Track order</button>
+            </div>
         `
+
+        const trackOrderBtn = document.querySelector('.btn-track-order')
+        trackOrderBtn.addEventListener('click', () => {
+            window.location.href = `/track-order/${orderId}`
+        })
 
 
 

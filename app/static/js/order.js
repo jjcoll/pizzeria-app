@@ -29,6 +29,10 @@ function updateOrder() {
             <button class="btn"><a href="/menu">Menu</a></button>
         </div> 
         `
+
+        // hide the button to pay
+        document.querySelector('.continue-to-payment__section').classList.add('hidden')
+
     } else {
 
         order.forEach(item => {

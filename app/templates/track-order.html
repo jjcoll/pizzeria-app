@@ -1,8 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/track-order.css') }}">
 
 <section class="container">
-    <h1>Track your order</h1>
+
+    <div class="order-container hidden">
+
+
+        <h2 class="heading-2">Order Status #<span class="order-number heading-2"></span></h1>
+
+            <div class="item-container">
+                <!-- <p><span class="status">busy</span>3 x Pepperoni Pizza </p>
+            <p><span class="status status-done">done</span>2 x Margarita Pizza </p> -->
+            </div>
+
+            <div class="progress-bar__container">
+                <div class="progress-bar"></div>
+            </div>
+            <p><span class="coocked-items"></span>/<span class="total-items"></span> items completed</p>
+
+            <b class="order-complete-message hidden">Your order is complete please come and pick up by counter!</b>
+
+    </div>
+
 </section>
 {% endblock %}

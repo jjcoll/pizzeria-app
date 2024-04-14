@@ -84,6 +84,29 @@ def track_order_page(orderId):
     )
 
 
+@app.route("/get-order-status/<orderId>", methods=["GET"])
+def get_order_status(orderId):
+
+    print(orderId)
+
+    order = Order.query.get(orderId)
+
+    items = []
+
+    if order:
+        order_items = order.items.all()
+
+        for item in order_items:
+            items.append(
+                {"coocked": item.coocked, "name": item.name, "quantity": item.quantity}
+            )
+
+        return jsonify({"items": items, "orderId": order.id})
+
+    else:
+        return jsonify({"message": "Order not found"}), 404
+
+
 @app.route("/get-orders/<filter>")
 def get_order(filter):
 
