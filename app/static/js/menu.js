@@ -31,25 +31,7 @@ deleteOrderBtn.addEventListener('click', () => {
 })
 
 
-const alertContainer = document.querySelector('.alert__container')
-function throwAlert(message) {
-    const alert = document.createElement('div')
-    alert.classList.add('alert-success')
-    alert.innerHTML = `
-            <p><strong>Product Added!</strong> ${message}</p>
-            <span class="closebtn" onclick="this.parentElement.style.display='none';"><i
-                    class="fa-solid fa-xmark"></i></span>
-        `
-    alertContainer.appendChild(alert)
 
-    setTimeout(() => {
-        console.log('removing thing')
-        const firstChild = alertContainer.querySelector('div');
-        if (firstChild) {
-            alertContainer.removeChild(firstChild);
-        }
-    }, 3000)
-}
 
 
 menu.map(item => {
@@ -80,7 +62,7 @@ menu.map(item => {
 
 
         // alert the user
-        throwAlert(item.name)
+        throwAlert(item.name, 'Added to the cart', 'success')
 
 
         // check if item already in order

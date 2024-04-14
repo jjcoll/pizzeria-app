@@ -67,14 +67,14 @@ function updateOrder() {
                 removeItem(item)
                 localStorage.setItem('order', JSON.stringify(order));
                 updateOrder()
-                updateCart()
+                // updateCart()
             })
 
             increaseQuantityBtn.addEventListener('click', () => {
                 item.quantity += 1
                 localStorage.setItem('order', JSON.stringify(order));
                 updateOrder()
-                updateCart()
+                // updateCart()
             })
 
             decreaseQuantityBtn.addEventListener('click', () => {
@@ -82,7 +82,7 @@ function updateOrder() {
                     item.quantity -= 1
                     localStorage.setItem('order', JSON.stringify(order));
                     updateOrder()
-                    updateCart()
+                    // updateCart()
                 }
 
             })
@@ -91,8 +91,8 @@ function updateOrder() {
         }
         )
     }
-
-
+    updateCart()
+    document.querySelector('.total-price').innerText = calculateTotal(order)
 }
 
 updateOrder()

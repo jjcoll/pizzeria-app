@@ -155,3 +155,54 @@ body {
 .btn-remove:hover {
     background-color: #ffc9c9;
 }
+
+.hidden {
+    display: none;
+}
+
+
+/* Alert */
+
+.alert__container {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.alert__container div {
+    margin-bottom: 12px;
+}
+
+.alert {
+    padding: 20px 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+
+    /* position: fixed; */
+    /* width: 100%; */
+}
+
+.alert-success {
+    background-color: #37b24d;
+}
+
+.alert-danger {
+    background-color: #e03131;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: black;
+}

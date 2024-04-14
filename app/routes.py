@@ -67,7 +67,21 @@ def recieve_order():
 
     print(order)
 
-    return jsonify({"message": "Order received successfully"})
+    return jsonify(
+        {
+            "message": "Order received successfully",
+            "order": order,
+            "orderId": newOrder.id,
+        }
+    )
+
+
+@app.route("/track-order/<orderId>")
+def track_order_page(orderId):
+
+    return render_template(
+        "track-order.html", js_file=url_for("static", filename="js/trackOrder.js")
+    )
 
 
 @app.route("/get-orders/<filter>")
