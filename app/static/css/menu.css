@@ -49,6 +49,10 @@
     justify-content: space-between;
 }
 
+.pizza__information {
+    width: 100%;
+}
+
 
 
 .pizza__img {

@@ -1,6 +1,6 @@
 from flask import render_template, url_for, jsonify, request
 from app import app, db
-from app.models import Order, OrderItem
+from app.models import Order, OrderItem, PizzaMenu
 
 
 @app.route("/")
@@ -102,7 +102,6 @@ def get_order_status(orderId):
             )
 
         return jsonify({"items": items, "orderId": order.id})
-
     else:
         return jsonify({"message": "Order not found"}), 404
 
@@ -184,3 +183,40 @@ def update_item():
         return jsonify({"message": "Item updated correctly"})
     else:
         return jsonify({"message": "Item not found"}), 404
+
+
+@app.route("/get-pizza-menu", methods=["GET"])
+def get_pizza_menu():
+
+    menuData = PizzaMenu.query.all()
+    menu = []
+    for pizza in menuData:
+        menu.append(
+            {
+                "name": pizza.name,
+                "imageName": pizza.imageName,
+                "price": pizza.price,
+                "vegan": pizza.vegan,
+                "soldOut": pizza.soldOut,
+                "description": pizza.description,
+                "timeToCook": pizza.timeToCook,
+            }
+        )
+
+    return jsonify({"menu": menu})
+
+
+@app.route("/post-pizza-menu")
+def post_pizza_menu():
+
+    new_pizza = PizzaMenu(
+        name=item["name"],
+        imageName=item["imageName"],
+        price=item["price"],
+        vegan=item["vegan"],
+        soldOut=item["soldOut"],
+        description=item["description"],
+        timeToCook=item["timeToCook"],
+    )
+    db.session.add(new_pizza)
+    db.session.commit()

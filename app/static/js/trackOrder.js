@@ -23,7 +23,7 @@ function updateDisplay(items) {
 
         const html = `  
             <span class="status ${item.coocked ? 'status-done' : ''}">
-            ${item.coocked ? 'done' : 'busy'}</span>${item.quantity} x ${item.name}
+            ${item.coocked ? 'done' : 'cooking'}</span>${item.quantity} x ${item.name}
         `
         const element = document.createElement('p')
         element.innerHTML = html
@@ -47,7 +47,6 @@ function updateDisplay(items) {
 }
 
 async function getOrderStatus(orderId) {
-    showLoader()
     const url = `http://127.0.0.1:5000/get-order-status/${orderId}`
 
     try {
@@ -59,20 +58,21 @@ async function getOrderStatus(orderId) {
             orderContainer.innerHTML = `
             <b>404 order not found</b>
             `
-
-        } else {
-
-            const { items, orderId } = await res.json()
-            hideLoader()
-
-            orderNumberEl.innerText = orderId
-
-            console.log(items)
-
-            updateDisplay(items)
-            orderContainer.classList.remove('hidden')
+            return -1
 
         }
+
+        const { items, orderId } = await res.json()
+        hideLoader()
+
+        orderNumberEl.innerText = orderId
+
+        console.log(items)
+
+        updateDisplay(items)
+        orderContainer.classList.remove('hidden')
+
+
 
 
 
@@ -88,6 +88,9 @@ const url = window.location.href.split('/')
 const orderId = url[url.length - 1]
 console.log(orderId)
 
+
+showLoader()
+getOrderStatus(orderId)
 
 setInterval(() => {
     getOrderStatus(orderId)

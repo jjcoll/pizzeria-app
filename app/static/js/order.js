@@ -1,26 +1,18 @@
 let order = JSON.parse(localStorage.getItem('order'));
 const orderContainer = document.querySelector('.order-container')
-
-// const cartItemsElement = document.querySelector('.cart-items')
-
 const submitOrderBtn = document.querySelector('.submit-order')
+
 
 function removeItem(item) {
     order = order.filter(orderItem => {
         return orderItem.name !== item.name
     })
 
-    console.log(order)
 }
 
 function updateOrder() {
 
     orderContainer.innerHTML = ''
-
-    // update cart
-    // cartItemsElement.innerText = order.length
-
-    console.log(order)
 
     if (order.length === 0) {
         orderContainer.innerHTML = `
