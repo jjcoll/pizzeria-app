@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/payment.css') }}">
+
+<section class="container">
+    <h2 class="heading-2">Enter payment details</h2>
+
+    <form class="payment-form">
+        <h2 class="form-title">Payment Information</h2>
+
+        <div class="payment-options">
+            <input value="credit-card" type="radio" id="credit-card" name="payment" class="payment-option">
+            <label for="credit-card" class="payment-label">Credit Card</label>
+
+            <input value="paypal" type="radio" id="paypal" name="payment" class="payment-option">
+            <label for="paypal" class="payment-label">PayPal</label>
+        </div>
+
+        <div class="input-fields">
+            <!-- <input type="text" id="name" name="name" class="input-field" placeholder="Full Name">
+            <input type="text" id="card-number" name="card-number" class="input-field" placeholder="Card Number">
+            <input type="text" id="expiry-date" name="expiry-date" class="input-field" placeholder="Expiry Date">
+            <input type="text" id="cvv" name="cvv" class="input-field" placeholder="CVV"> -->
+        </div>
+
+
+        <button type="submit" class="submit-button">Pay Now</button>
+    </form>
+
+</section>
+
+{% endblock %}

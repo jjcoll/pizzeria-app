@@ -10,9 +10,11 @@ if (!order) {
     order = []
 }
 
-const cartItemsElement = document.querySelector('.cart-items')
-let cartItems = order.length
-cartItemsElement.innerText = cartItems
+updateCart()
+
+// const cartItemsElement = document.querySelector('.cart-items')
+// let cartItems = order.length
+// cartItemsElement.innerText = cartItems
 
 
 const deleteOrderBtn = document.querySelector('.btn-remove')
@@ -23,8 +25,9 @@ deleteOrderBtn.addEventListener('click', () => {
     localStorage.setItem('order', JSON.stringify(order));
 
     // reset cart
-    cartItemsElement.innerText = 0
-    cartItems = 0
+    // cartItemsElement.innerText = 0
+    // cartItems = 0
+    updateCart()
 })
 
 
@@ -87,8 +90,8 @@ menu.map(item => {
         if (exists === -1) {
             order.push({ ...item, "quantity": 1 })
             console.log('added to order')
-            cartItems += 1
-            cartItemsElement.innerText = cartItems
+            // cartItems += 1
+            // cartItemsElement.innerText = cartItems
 
 
             // increase quantity 
@@ -98,8 +101,10 @@ menu.map(item => {
         }
 
 
+
         // save order 
         localStorage.setItem('order', JSON.stringify(order));
+        updateCart()
     })
 
     menuContainer.appendChild(element)

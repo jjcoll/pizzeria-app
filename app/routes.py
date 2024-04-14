@@ -33,6 +33,14 @@ def kitchen_page():
     )
 
 
+@app.route("/payment")
+def payment_page():
+
+    return render_template(
+        "payment.html", js_file=url_for("static", filename="js/payment.js")
+    )
+
+
 @app.route("/post-order", methods=["POST"])
 def recieve_order():
 

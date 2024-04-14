@@ -1,7 +1,7 @@
 let order = JSON.parse(localStorage.getItem('order'));
 const orderContainer = document.querySelector('.order-container')
 
-const cartItemsElement = document.querySelector('.cart-items')
+// const cartItemsElement = document.querySelector('.cart-items')
 
 const submitOrderBtn = document.querySelector('.submit-order')
 
@@ -18,7 +18,7 @@ function updateOrder() {
     orderContainer.innerHTML = ''
 
     // update cart
-    cartItemsElement.innerText = order.length
+    // cartItemsElement.innerText = order.length
 
     console.log(order)
 
@@ -67,12 +67,14 @@ function updateOrder() {
                 removeItem(item)
                 localStorage.setItem('order', JSON.stringify(order));
                 updateOrder()
+                updateCart()
             })
 
             increaseQuantityBtn.addEventListener('click', () => {
                 item.quantity += 1
                 localStorage.setItem('order', JSON.stringify(order));
                 updateOrder()
+                updateCart()
             })
 
             decreaseQuantityBtn.addEventListener('click', () => {
@@ -80,6 +82,7 @@ function updateOrder() {
                     item.quantity -= 1
                     localStorage.setItem('order', JSON.stringify(order));
                     updateOrder()
+                    updateCart()
                 }
 
             })
@@ -93,48 +96,16 @@ function updateOrder() {
 }
 
 updateOrder()
+updateCart()
 
 
 submitOrderBtn.addEventListener('click', async () => {
 
     if (order.length !== 0) {
 
-        const url = 'http://127.0.0.1:5000/post-order'
-        const data = {
-            order: order
-        }
+        // send to completed order page
+        window.location.href = '/payment'
 
-        // send post request to server
-
-        try {
-            const res = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-
-            if (!res.ok) {
-                throw new Error('Server response was not ok')
-            }
-
-            const resData = await res.json()
-
-            // reset values
-            order = []
-            localStorage.setItem('order', JSON.stringify(order));
-            cartItemsElement.innerText = 0
-            updateOrder()
-
-            // send to completed order page
-
-
-
-            console.log(resData)
-        } catch (error) {
-            console.log('Error:', error)
-        }
     }
 
 
