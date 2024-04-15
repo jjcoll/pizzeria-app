@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/edit-menu.css') }}">
+
+<section class="edit-menu__container hidden">
+    <h2 class="heading-2">Edit the Menu Items</h2>
+
+    <div class="menu-table">
+    </div>
+</section>
+
+<div class="floating-window hidden">
+    <div class="close-btn-container">
+        <button class="btn close-window-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="window-content"></div>
+</div>
+
+
+{% endblock %}

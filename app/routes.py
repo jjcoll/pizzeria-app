@@ -41,6 +41,13 @@ def payment_page():
     )
 
 
+@app.route("/edit-menu")
+def edit_menu_page():
+    return render_template(
+        "edit-menu.html", js_file=url_for("static", filename="js/editMenu.js")
+    )
+
+
 @app.route("/post-order", methods=["POST"])
 def recieve_order():
 
@@ -193,6 +200,7 @@ def get_pizza_menu():
     for pizza in menuData:
         menu.append(
             {
+                "id": pizza.id,
                 "name": pizza.name,
                 "imageName": pizza.imageName,
                 "price": pizza.price,
@@ -220,3 +228,42 @@ def post_pizza_menu():
     )
     db.session.add(new_pizza)
     db.session.commit()
+
+
+@app.route("/update-pizza-menu", methods=["POST"])
+def update_pizza_menu_item():
+    data = request.json
+    itemData = data.get("item")
+
+    if itemData:
+        # Extract values from the received data
+        item_id = itemData.get("id")
+        name = itemData.get("name")
+        imageName = itemData.get("imageName")
+        price = itemData.get("price")
+        vegan = itemData.get("vegan")
+        soldOut = itemData.get("soldOut")
+        description = itemData.get("description")
+        timeToCook = itemData.get("timeToCook")
+
+        # Fetch the item from the database
+        item = PizzaMenu.query.get(item_id)
+
+        if item:
+            # Update the item with the new values
+            item.name = name
+            item.imageName = imageName
+            item.price = price
+            item.vegan = vegan
+            item.soldOut = soldOut
+            item.description = description
+            item.timeToCook = timeToCook
+
+            # Commit the changes to the database
+            db.session.commit()
+
+            return jsonify({"message": "Item updated correctly"})
+        else:
+            return jsonify({"message": "Item not found"}), 404
+    else:
+        return jsonify({"message": "Invalid data received"}), 400

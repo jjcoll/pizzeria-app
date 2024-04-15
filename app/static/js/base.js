@@ -1,3 +1,5 @@
+console.log('hello from base')
+
 function updateCart() {
 
     console.log('update cart')
