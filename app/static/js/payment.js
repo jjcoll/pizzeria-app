@@ -7,7 +7,7 @@ const inputFields = document.querySelector('.input-fields')
 // total price next to button
 let order = JSON.parse(localStorage.getItem('order'))
 const priceElement = document.querySelector('.price')
-priceElement.innerText = `(${calculateTotal(order)} $)`
+priceElement.innerText = `(${formatToEuro(calculateTotal(order))} )`
 
 let paymentOption = 'credit-card'
 
@@ -146,6 +146,9 @@ function validatePayment() {
         if (validEmail && validPassword) {
             submitOrder()
         }
+    } else if (paymentOption === 'ideal') {
+
+        submitOrder()
     }
 }
 
@@ -161,11 +164,11 @@ function updateForm(paymentOption) {
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" class="input-field" placeholder="Jhon Doe">
             <label for="card-number">Card Number</label>
-            <input type="text" id="card-number" name="card-number" class="input-field" placeholder="xxxx xxxx xxxx 1234">
+            <input type="text" id="card-number" name="card-number" class="input-field" placeholder="1234 1234 1234 1234">
             <label for="expiry-date">Expiry Date</label>
-            <input type="text" id="expiry-date" name="expiry-date" class="input-field" placeholder="mm/yyyy">
+            <input type="text" id="expiry-date" name="expiry-date" class="input-field" placeholder="01/2026">
             <label for="cvv">CVV</label>
-            <input type="text" id="cvv" name="cvv" class="input-field" placeholder="xxx">
+            <input type="text" id="cvv" name="cvv" class="input-field" placeholder="123">
             `
 
 
@@ -176,7 +179,18 @@ function updateForm(paymentOption) {
             <input type="text" id="email" name="email" class="input-field" placeholder="Email">
             <input type="password" id="password" name="password" class="input-field" placeholder="Password"> 
             `
-    }
+    } else if (paymentOption === 'ideal')
+
+        inputFields.innerHTML = `
+                <input type="text" id="email" name="email" class="input-field" placeholder="Phone Number">
+                <select id="bank" name="bank" class="input-field">
+                    <!-- Add your options here -->
+                    <option value="ABN AMRO">ABN AMRO</option>
+                    <option value="ING">ING</option>
+                    <option value="Rabobank">Rabobank</option>
+                    <!-- Add more options as needed -->
+                </select>
+    `
 }
 
 paymentOptionBtn.forEach(option => {
@@ -249,17 +263,17 @@ async function submitOrder() {
                 `<tr> 
                     <td>${item.quantity} </td>
                     <td>${item.name} </td>
-                    <td>${item.price} $</td>
-                    <td>${item.price * item.quantity} $</td>
+                    <td>${formatToEuro(item.price)} $</td>
+                    <td>${formatToEuro(item.price * item.quantity)} </td>
                 </tr>`)
         }).join('')
 
         console.log(orderSummary)
 
         completeOrderContainer.innerHTML = `
-            <p>We have recieved your order!</p>
+            <p class='oc-title'>We have recieved your order!</p>
             <p>Your order number is ${orderId}</p>
-            <p>Order summary: </p>
+            <p class='oc-summary'>Order summary: </p>
             <table class="summary-table">
                 <tr>
                     <th>Quantity</th>
@@ -269,8 +283,8 @@ async function submitOrder() {
                 </tr> 
             ${orderSummary}
             </table>
-            <div class="flex">
-            <p>Total ${calculateTotal(serverOrder)} $</p>
+            <div class="flex oc-total-container">
+            <p class='oc-total'>Total ${formatToEuro(calculateTotal(serverOrder))} </p>
             <button class="btn btn-track-order">Track order</button>
             </div>
         `

@@ -1,6 +1,8 @@
 from flask import render_template, url_for, jsonify, request
 from app import app, db
 from app.models import Order, OrderItem, PizzaMenu
+from werkzeug.utils import secure_filename
+import os
 
 
 @app.route("/")
@@ -119,7 +121,7 @@ def get_order(filter):
     if filter == "all":
         data_orders = Order.query.all()
     elif filter == "completed":
-        data_orders = Order.query.filter(Order.completed == True).all()
+        data_orders = Order.query.filter(Order.completed).all()
     elif filter == "not-done":
         data_orders = Order.query.filter(Order.completed == False).all()
 
@@ -267,3 +269,78 @@ def update_pizza_menu_item():
             return jsonify({"message": "Item not found"}), 404
     else:
         return jsonify({"message": "Invalid data received"}), 400
+
+
+@app.route("/delete-pizza-menu", methods=["POST"])
+def delete_pizza_menu_item():
+
+    data = request.json
+    itemId = data.get("id")
+
+    item = PizzaMenu.query.get(itemId)
+
+    if item:
+        # Delete the item from the database
+        db.session.delete(item)
+        db.session.commit()
+        return jsonify({"message": "Item deleted successfully"})
+    else:
+        return jsonify({"message": "Item not found"}), 404
+
+
+@app.route("/create-pizza-menu", methods=["POST"])
+def create_pizza_menu():
+
+    data = request.json
+    item = data.get("item")
+
+    if item:
+
+        new_pizza = PizzaMenu(
+            name=item["name"],
+            imageName=item["imageName"],
+            price=item["price"],
+            vegan=item["vegan"],
+            soldOut=item["soldOut"],
+            description=item["description"],
+            timeToCook=item["timeToCook"],
+        )
+
+        db.session.add(new_pizza)
+        # Commit the changes to the database
+        db.session.commit()
+
+        return jsonify({"message": "Item updated correctly"})
+    else:
+        return jsonify({"message": "Invalid data received"}), 400
+
+
+@app.route("/upload-pizza-img", methods=["POST"])
+def upload_pizza_img():
+
+    try:
+        # Check if the POST request has a file part
+
+        if "file" not in request.files:
+            return jsonify({"error": "No file part in the request"}), 400
+
+        file = request.files["file"]
+
+        # Check if the file is uploaded
+        if file.filename == "":
+            return jsonify({"error": "No file selected for uploading"}), 400
+
+        # Save the file to the desired folder
+        print("-------------")
+        print(app.config["UPLOAD_FOLDER"])
+        print(file.filename)
+        print(file)
+        print(f"{app.config['UPLOAD_FOLDER']}/{file.filename}")
+        file.save(f"{app.config['UPLOAD_FOLDER']}/{file.filename}")
+
+        return jsonify({"message": "File uploaded successfully"}), 200
+    except Exception as e:
+        print("------------")
+        print("something went wrong here", e)
+        print(e)
+        return jsonify({"error": str(e)}), 500

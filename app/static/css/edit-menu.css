@@ -1,6 +1,7 @@
 .edit-menu__container {
     width: 95%;
     margin: 0 auto;
+    margin-top: 32px;
 }
 
 .menu-table {
@@ -9,6 +10,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
+    margin-bottom: 48px;
 }
 
 .menu-item {
@@ -41,6 +43,10 @@
 .action-btn-container {
     display: flex;
     justify-content: space-around;
+}
+
+.pizza-id {
+    margin-bottom: 12px;
 }
 
 /* floating window */
@@ -130,4 +136,14 @@
     z-index: -1;
     height: 100%;
     /* overflow: hidden; */
+}
+
+/* Delete */
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.d-text {
+    margin-bottom: 24px;
 }

@@ -68,3 +68,14 @@ function calculateTotal(order) {
 
     return total
 }
+
+
+function formatToEuro(number) {
+    // Format the number to have two decimal places
+    const formattedNumber = parseFloat(number).toFixed(2);
+
+    // Add euro symbol and thousand separators
+    const formattedEuro = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(formattedNumber);
+
+    return formattedEuro;
+}

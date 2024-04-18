@@ -136,6 +136,8 @@ async function getOrders(filter) {
         const orderContainer = document.querySelector('.order__container')
         orderContainer.innerHTML = ''
 
+        console.log(orders.length)
+
         if (orders.length === 0) {
             // no orders
             orderContainer.innerHTML = '<p class="no-orders">No orders yet</p>'

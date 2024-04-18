@@ -73,7 +73,7 @@ function renderMenu(menu) {
             <h2 class="pizza-name">${item.name}</h2>
             <p class="pizza-desc">${item.description}</p>
             <div class="pizza-price-btn">  
-                <p class="pizza-price">${item.price} $</p>
+                <p class="pizza-price">${formatToEuro(item.price)}</p>
                 <button class="add-to-order btn">Add to Order</button> 
             </div> 
         </div>

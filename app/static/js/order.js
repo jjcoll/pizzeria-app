@@ -44,7 +44,7 @@ function updateOrder() {
                 <div>
                     <p>${item.name}</p>
                     <p>Amount: <button class="order-btn ob-1">-</button> ${item.quantity} <button class="order-btn ob-2">+</button></p>
-                    <p>Price: ${item.price * item.quantity} $</p>
+                    <p>Price: ${formatToEuro(item.price * item.quantity)}</p>
                     <button class="btn-remove btn">Remove</button>
                 </div>
     `
@@ -88,7 +88,7 @@ function updateOrder() {
         )
     }
     updateCart()
-    document.querySelector('.total-price').innerText = calculateTotal(order)
+    document.querySelector('.total-price').innerText = formatToEuro(calculateTotal(order))
 }
 
 updateOrder()

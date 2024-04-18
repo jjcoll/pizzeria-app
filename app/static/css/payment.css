@@ -12,6 +12,8 @@
 
 .payment-options {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .payment-option {
@@ -19,12 +21,20 @@
 }
 
 .input-field {
-    width: 100%;
+    /* width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
+    box-sizing: border-box; */
+
+    width: 100%;
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 24px;
+
 }
 
 .submit-button {
@@ -33,7 +43,7 @@
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     cursor: pointer;
 }
 
@@ -41,7 +51,29 @@
     background-color: #45a049;
 }
 
+.oc-summary {
+
+    margin-top: 24px;
+}
+
 .summary-table {
     text-align: center;
     width: 600px;
+    margin-bottom: 32px;
+}
+
+.order-complete {}
+
+.oc-title {
+    font-weight: 600;
+}
+
+.oc-total-container {
+    width: 60%;
+}
+
+
+.oc-total {
+    font-weight: 600;
+    font-size: 22px;
 }
